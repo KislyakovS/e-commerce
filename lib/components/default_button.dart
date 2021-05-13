@@ -30,7 +30,7 @@ class DefaultButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all<Color>(kPrimaryColor),
         ),
         child: Text(
-          'Continue',
+          text,
           style: TextStyle(
             fontSize: getProportionateScreenWidth(18),
             color: Colors.white,
