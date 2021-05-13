@@ -1,8 +1,8 @@
+import 'package:e_commerce/components/no_account_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
 import 'form_forgot.dart';
-import 'no_account_text.dart';
 
 class Body extends StatelessWidget {
   const Body({

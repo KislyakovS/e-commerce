@@ -1,9 +1,8 @@
-import 'package:e_commerce/components/no_account_text.dart';
 import 'package:e_commerce/components/social_cards.dart';
-import 'package:e_commerce/screens/sign_in/components/sign_form.dart';
-import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/screens/sign_up/components/sign_up_form.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
+import '../../../size_config.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -11,16 +10,16 @@ class Body extends StatelessWidget {
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(20),
-          ),
-          child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: getProportionateScreenWidth(20),
+            ),
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
-                  'Welcome Back',
+                  'Register Account',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: getProportionateScreenHeight(28),
@@ -28,15 +27,18 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  'Sign in with your email and password \nor continue with social media',
+                  'Complete your details or continue \nwith social media',
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
-                SignForm(),
-                SizedBox(height: getProportionateScreenHeight(40)),
+                SignUpForm(),
+                SizedBox(height: SizeConfig.screenHeight * 0.07),
                 SocialCards(),
                 SizedBox(height: getProportionateScreenHeight(10)),
-                NoAccountText(),
+                const Text(
+                  'By continuing your confirm that you agree \nwith out Term and Condition',
+                  textAlign: TextAlign.center,
+                )
               ],
             ),
           ),
