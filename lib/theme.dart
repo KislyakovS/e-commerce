@@ -31,17 +31,16 @@ TextTheme textTheme() {
 }
 
 InputDecorationTheme inputDecorationTheme() {
+  OutlineInputBorder outlineInputBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(28),
+    borderSide: const BorderSide(color: kTextColor),
+    gapPadding: 10,
+  );
+
   return InputDecorationTheme(
     contentPadding: const EdgeInsets.symmetric(horizontal: 45, vertical: 20),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(28),
-      borderSide: const BorderSide(color: kTextColor),
-      gapPadding: 10,
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(28),
-      borderSide: const BorderSide(color: kTextColor),
-      gapPadding: 10,
-    ),
+    enabledBorder: outlineInputBorder,
+    focusedBorder: outlineInputBorder,
+    border: outlineInputBorder,
   );
 }
