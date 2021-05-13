@@ -1,6 +1,7 @@
 import 'package:e_commerce/components/custom_suffix_icon.dart';
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
+import 'package:e_commerce/screens/completion_profile/completion_profile_screen.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,7 @@ class _SignUpFormState extends State<SignUpForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(context, CompletionProfileScreen.routeName);
               }
             },
           )
@@ -137,7 +139,7 @@ class _SignUpFormState extends State<SignUpForm> {
           setState(() {
             errors.remove(kPassNullError);
           });
-        } else if (value.length > 8 && errors.contains(kShortPassError)) {
+        } else if (password == value && !errors.contains(kMatchPassError)) {
           setState(() {
             errors.remove(kShortPassError);
           });
@@ -149,8 +151,7 @@ class _SignUpFormState extends State<SignUpForm> {
             errors.add(kPassNullError);
           });
           return '';
-        } else if (password == conform_password &&
-            !errors.contains(kMatchPassError)) {
+        } else if (password == value && !errors.contains(kMatchPassError)) {
           setState(() {
             errors.add(kMatchPassError);
           });
