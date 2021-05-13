@@ -1,6 +1,7 @@
 import 'package:e_commerce/components/custom_suffix_icon.dart';
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
+import 'package:e_commerce/screens/forgot_password/forgot_password_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -12,7 +13,7 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
-  final _fromKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   String email;
   String password;
   bool remember = false;
@@ -20,7 +21,7 @@ class _SignFormState extends State<SignForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _fromKey,
+      key: _formKey,
       child: Column(
         children: [
           buildEmailFormField(),
@@ -42,9 +43,14 @@ class _SignFormState extends State<SignForm> {
               ),
               const Text('Remember me'),
               const Spacer(),
-              const Text(
-                'Forgot Password',
-                style: TextStyle(decoration: TextDecoration.underline),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, ForgotPasswordScreen.routeName);
+                },
+                child: const Text(
+                  'Forgot Password',
+                  style: TextStyle(decoration: TextDecoration.underline),
+                ),
               ),
             ],
           ),
@@ -53,8 +59,8 @@ class _SignFormState extends State<SignForm> {
           DefaultButton(
             text: 'Continue',
             press: () {
-              if (_fromKey.currentState.validate()) {
-                _fromKey.currentState.save();
+              if (_formKey.currentState.validate()) {
+                _formKey.currentState.save();
               }
             },
           )

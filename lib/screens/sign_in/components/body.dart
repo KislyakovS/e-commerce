@@ -1,4 +1,5 @@
 import 'package:e_commerce/constants.dart';
+import 'package:e_commerce/screens/forgot_password/forgot_password_screen.dart';
 import 'package:e_commerce/screens/sign_in/components/sign_form.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
@@ -59,11 +60,14 @@ class Body extends StatelessWidget {
                       style:
                           TextStyle(fontSize: getProportionateScreenWidth(16)),
                     ),
-                    Text(
-                      'Sing Up',
-                      style: TextStyle(
-                        fontSize: getProportionateScreenWidth(16),
-                        color: kPrimaryColor,
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        'Sing Up',
+                        style: TextStyle(
+                          fontSize: getProportionateScreenWidth(16),
+                          color: kPrimaryColor,
+                        ),
                       ),
                     )
                   ],
