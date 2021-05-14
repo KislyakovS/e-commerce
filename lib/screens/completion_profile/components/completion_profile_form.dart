@@ -1,6 +1,7 @@
 import 'package:e_commerce/components/custom_suffix_icon.dart';
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
+import 'package:e_commerce/screens/otp/otp_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -39,6 +40,7 @@ class _CompletionProfileFormState extends State<CompletionProfileForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(context, OtpScreen.routeName);
               }
             },
           )
@@ -91,7 +93,7 @@ class _CompletionProfileFormState extends State<CompletionProfileForm> {
       validator: (value) {
         if (value.isEmpty && !errors.contains(kNamelNullError)) {
           setState(() {
-            errors.add(kEmailNullError);
+            errors.add(kNamelNullError);
           });
           return '';
         }
