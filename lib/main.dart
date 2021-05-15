@@ -1,4 +1,3 @@
-import 'package:e_commerce/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'routs.dart';
