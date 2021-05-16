@@ -11,18 +11,20 @@ class ProductCard extends StatelessWidget {
     this.width = 140,
     this.aspectRetion = 1.02,
     @required this.product,
+    @required this.press,
   }) : super(key: key);
 
   final double width;
   final double aspectRetion;
   final Product product;
+  final GestureTapCallback press;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: GestureDetector(
-        onTap: () {},
+        onTap: press,
         child: SizedBox(
           width: getProportionateScreenWidth(width),
           child: Column(
