@@ -19,6 +19,7 @@ class PopularProduct extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ...demoProducts
                   .map((item) => ProductCard(product: item))
