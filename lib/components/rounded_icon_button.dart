@@ -20,6 +20,7 @@ class RoundedIconButton extends StatelessWidget {
       child: TextButton(
         onPressed: press,
         style: ButtonStyle(
+          alignment: Alignment.center,
           backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
@@ -27,12 +28,9 @@ class RoundedIconButton extends StatelessWidget {
             ),
           ),
         ),
-        child: Container(
-          padding: EdgeInsets.only(left: getProportionateScreenWidth(5)),
-          child: Icon(
-            iconData,
-            color: Colors.black,
-          ),
+        child: Icon(
+          iconData,
+          color: Colors.black,
         ),
       ),
     );
