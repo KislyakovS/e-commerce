@@ -28,7 +28,7 @@ class RoundedIconButton extends StatelessWidget {
           ),
         ),
         child: Container(
-          padding: EdgeInsets.only(left: getProportionateScreenWidth(7)),
+          padding: EdgeInsets.only(left: getProportionateScreenWidth(5)),
           child: Icon(
             iconData,
             color: Colors.black,
