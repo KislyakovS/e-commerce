@@ -12,9 +12,12 @@ class DetailsScreen extends StatelessWidget {
       backgroundColor: Color(0xFFF5F6F9),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: RoundedIconButton(
-          iconData: Icons.arrow_back_ios,
-          press: () => Navigator.pop(context),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: RoundedIconButton(
+            iconData: Icons.arrow_back_ios,
+            press: () => Navigator.pop(context),
+          ),
         ),
       ),
     );
