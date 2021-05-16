@@ -1,4 +1,6 @@
+import 'package:e_commerce/components/rounded_con_button.dart';
 import 'package:e_commerce/models/Product.dart';
+import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -7,7 +9,14 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      backgroundColor: Color(0xFFF5F6F9),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: RoundedIconButton(
+          iconData: Icons.arrow_back_ios,
+          press: () => Navigator.pop(context),
+        ),
+      ),
     );
   }
 }
